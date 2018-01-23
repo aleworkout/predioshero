@@ -1,66 +1,42 @@
 <!-- <p id="notice"><%#= notice %></p> -->
-
-<h1 align="center">Edificios con tiendas disponibles</h1>
-<ul class="nav nav-pills" role="tablist">
-  <li><%= link_to 'Todas las tiendas', shops_path, class: 'nav-item' %></li>
-  <% @my_shops.each do |s| %>
-    <li><%= link_to "#{s.predio.name}", controller: "shops", predio_id: "#{s.predio_id}" %></li>
+<%= form_for("", url: shops_path, method:'get', remote: true, html: { id: 'shops_index', role: 'form'} ) do |f| %> 
+  <h1 align="center">Edificios con tiendas disponibles</h1>
+  <div class="row" style="display:block">
+    <div class="col-md-12">
+      <%= select_tag(:predio_id, options_for_select( @my_shops.collect {|p| [p.predio.name, p.predio_id] }), { prompt: 'Todas las Tiendas', class: 'selectpicker'})%> 
+    </div>
+  </div> 
+  <!-- <ul class="nav nav-pills" role="tablist">
+    <li><%#= link_to 'Todas las tiendas', shops_path, class: 'nav-item' %></li>
+    <%# @my_shops.each do |s| %>
+      <li><%#= link_to "#{s.predio.name}", controller: "shops", predio_id: "#{s.predio_id}" %></li>
+    <%# end %>
+  </ul> -->
+  <br />
+  <% if user_signed_in? %>
+  <%= link_to "Mis Tiendas", user_shops_path(current_user), role: 'button', class: 'btn btn-success btn-xs' %>
   <% end %>
-</ul>
-<br />
-<% if user_signed_in? %>
-<%= link_to "Mis Tiendas", user_shops_path(@shops), role: 'button', class: 'btn btn-success btn-xs' %>
+  <br />
+    <div class="row">
+      <br />
+        <div id="stores">
+          <%= render 'stores' %>
+        </div>
+      <br /><br /><br />
+    </div>
 <% end %>
-<br />
-  <div class="row">
-    <br />
-    <% @shops.each do |shop| %>
-      <% @alejandros.each do |user| %>
-        <% if shop.user.email == user.email %>
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <%= link_to image_tag(shop.image_url, class: "img-responsive aspect"), shop %><br>
-              <div class="caption">
-                <div class="bb">
-                  <% if shop.available %>
-                    <h2 class="clase"><span class="span"><%= shop.name %></span></h2><p class="otra">(abierta ahora)</p>
-                  <% else %>
-                    <h2 class="clase"><span class="span"><%= shop.name %></span></h2><p class="otra">(cerrada ahora)</p>
-                  <% end %>
-                </div>
-                <% if user_signed_in? %>
-                  <% if current_user.email == "ale@ale.cl" %>
-                    <h3><%= shop.user.email %></h3>
-                  <% end %>
-                <% end %>
-                <h4><%= shop.number %></h4>
-                <% if shop.whatsapp %>
-                  <ul>
-                    <li>Tenemos Whatsapp</li>
-                  </ul>
-                <% end %>
-                <% if shop.phone %>
-                  <ul>
-                    <li>Puede llamarnos</li>
-                  </ul>
-                <% end %>
-                <p>
-                <% if user_signed_in? %>
-                <% if current_user.id == shop.user_id or current_user.email == "ale@ale.cl" %>
-                  <%= link_to 'Editar', edit_shop_path(shop), role: 'button', class: 'btn btn-success btn-sm' %>
-                  <%= link_to 'Eliminar', shop, method: :delete, data: { confirm: 'Are you sure?' }, role: 'button', class: 'btn btn-success btn-sm' %>
-                <% end %>  
-                <% end %>
-                </p>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    <% end %>
-    <br /><br /><br />
-  </div>
-
 <% if user_signed_in? %>  
 <%= link_to 'Crear Nueva Tienda', new_shop_path, role: 'button', class: 'navbar-fixed-bottom button button3 btn-block' %>
 <% end %>
+<style type="text/css">
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+  width: 100%;
+}
+</style>
+
+<script type="text/javascript">
+  $('.selectpicker').selectpicker({
+      style: 'btn-default',
+      size: 5,
+  });
+</script>

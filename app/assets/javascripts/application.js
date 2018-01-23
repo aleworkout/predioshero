@@ -13,5 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require rails.validations
+//= require bootstrap-select
+//= require_tree .
+
+$(document).ready(function () {
+  $('#shops_index select').change(function () {
+    $.get($('#shops_index').attr('action'), 
+      $('#shops_index').serialize(), null, 'script');
+    return false;
+  });
+});
