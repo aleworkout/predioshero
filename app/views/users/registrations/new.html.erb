@@ -26,4 +26,6 @@
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
+<%- if controller_name != 'sessions' %>
+  <%= link_to "Iniciar sessión", new_session_path(resource_name) %><br />
+<% end -%>
