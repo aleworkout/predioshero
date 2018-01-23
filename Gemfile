@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'devise'
+gem 'pg'
 gem 'starter_generators'
 gem 'cancan', '~> 1.6', '>= 1.6.10'
 gem 'ransack'
@@ -21,7 +22,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'byebug'
 end
 
@@ -31,7 +31,6 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 
