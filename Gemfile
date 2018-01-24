@@ -12,6 +12,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'fog-aws'
 gem "mini_magick"
 
+gem 'figaro'
 
 gem 'rails', '4.2.5'
 gem 'sass-rails', '~> 5.0'
@@ -29,6 +30,15 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  #Capistrano
+  gem 'capistrano', '3.6.1'
+  gem 'webrick'
+  gem 'rvm1-capistrano3', require: false
+  gem 'capistrano-rvm'
+  gem 'capistrano3-puma'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rails-console'
 end
 
 group :production do
