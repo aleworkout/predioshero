@@ -17,6 +17,7 @@ set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/upl
 set :keep_releases, 5
 set :rails_env, "production"
 set :default_env, { rvm_bin_path: '~/.rvm/bin' }
+set :rvm_map_bins, %w{gem rake ruby bundle rvmsudo}
 
 
 set(:config_files, %w(
