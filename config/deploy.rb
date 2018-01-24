@@ -36,6 +36,20 @@ namespace :app do
     execute :gpg, "--keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3"
   end
 end
+
+namespace :figaro do
+  desc "SCP transfer figaro configuration to the shared folder"
+  task :setup do
+    transfer :up, "config/application.yml", "#{shared_path}/application.yml", :via => :scp
+  end
+
+  desc "Symlink application.yml to the release path"
+  task :finalize do
+    run "ln -sf #{shared_path}/application.yml #{release_path}/config/application.yml"
+  end
+end
+
+
 #before "rvm1:install:rvm", "app:update_rvm_key"
 
 namespace :deploy do
