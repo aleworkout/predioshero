@@ -274,6 +274,7 @@ DEPENDENCIES
   jquery-rails
   mini_magick
   pg (~> 0.18)
+  puma (~> 3.9)
   rails (= 4.2.5)
   rails_12factor
   ransack
