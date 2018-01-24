@@ -37,8 +37,8 @@ module Workspace
       :address              => "smtp.gmail.com",
       :port                 =>  587, # 25,
       :domain               => 'gmail.com',
-      :user_name            => 'noreplypredios@gmail.com', # 'sistemas',
-      :password             => 'noreply@.*',
+      :user_name            => 'R.Alejandro989@gmail.com', # 'sistemas',
+      :password             =>  ENV["email_password"],
       :authentication       => 'plain',
       #:ssl => true,
       :enable_starttls_auto => true, # Si lo colocaba en true daba este error= OpenSSL::SSL::SSLError (hostname does not match the server certificate)

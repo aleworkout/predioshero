@@ -18,7 +18,8 @@
 //= require_tree .
 
 $(document).ready(function () {
-  $('#shops_index select').change(function () {
+  $(document).off('change', "#shops_index select").on('change', "#shops_index select", function (e) {
+  //$('#shops_index select').change(function () {
     $.get($('#shops_index').attr('action'), 
       $('#shops_index').serialize(), null, 'script');
     return false;
