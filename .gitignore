@@ -15,3 +15,10 @@
 /log/*
 !/log/.keep
 /tmp
+
+#Ignore paperclip file
+/public/system/*
+/public/uploads/*
+/_dirname/
+
+/config/database.yml
