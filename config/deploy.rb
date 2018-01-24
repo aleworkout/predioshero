@@ -1,6 +1,5 @@
 SSHKit.config.command_map[:rake] = "bundle exec rake"
-SSHKit.config.command_map.prefix[:puma].push("bundle exec")
-SSHKit.config.command_map.prefix[:pumactl].push("bundle exec")
+
 lock '3.6.1'
 set :rvm_roles, [:app, :web]
 
