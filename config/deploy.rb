@@ -1,4 +1,6 @@
 SSHKit.config.command_map[:rake] = "bundle exec rake"
+SSHKit.config.command_map.prefix[:puma].push("bundle exec")
+SSHKit.config.command_map.prefix[:pumactl].push("bundle exec")
 lock '3.6.1'
 set :rvm_roles, [:app, :web]
 
@@ -17,6 +19,7 @@ set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/upl
 set :keep_releases, 5
 set :rails_env, "production"
 set :default_env, { rvm_bin_path: '~/.rvm/bin' }
+set :rvm_map_bins, %w{gem rake ruby rails bundle}
 
 set(:config_files, %w(
   nginx.conf
