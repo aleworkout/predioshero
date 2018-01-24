@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'devise'
-gem 'pg'
+gem 'pg', '~> 0.18'
 gem 'bootstrap-select-rails'
 gem 'starter_generators'
 gem 'cancan', '~> 1.6', '>= 1.6.10'
