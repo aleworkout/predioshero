@@ -43,7 +43,7 @@ group :development do
   gem 'capistrano-rails-console'
 end
 
-group :production do
-  gem 'rails_12factor'
-end
+#group :production do
+#  gem 'rails_12factor'
+#end
 
