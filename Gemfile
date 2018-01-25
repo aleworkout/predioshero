@@ -33,6 +33,7 @@ group :development do
   gem 'spring'
   #Capistrano
   gem 'capistrano', '3.6.1'
+  gem 'capistrano-figaro-yml', '~> 1.0.2'
   gem 'webrick'
   gem 'rvm1-capistrano3', require: false
   gem 'capistrano-rvm'
