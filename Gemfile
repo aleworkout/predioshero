@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'devise'
+gem 'pg', '~> 0.18'
+gem 'bootstrap-select-rails'
 gem 'starter_generators'
 gem 'cancan', '~> 1.6', '>= 1.6.10'
 gem 'ransack'
@@ -10,6 +12,8 @@ gem 'carrierwave', '~> 1.0'
 gem 'fog-aws'
 gem "mini_magick"
 
+gem 'figaro'
+gem 'puma',                             '~> 3.9'       # Use Puma as the app server
 
 gem 'rails', '4.2.5'
 gem 'sass-rails', '~> 5.0'
@@ -21,17 +25,25 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'byebug'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  #Capistrano
+  gem 'capistrano', '3.6.1'
+  gem 'capistrano-figaro-yml', '~> 1.0.2'
+  gem 'webrick'
+  gem 'rvm1-capistrano3', require: false
+  gem 'capistrano-rvm'
+  gem 'capistrano3-puma'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rails-console'
 end
 
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
+#group :production do
+#  gem 'rails_12factor'
+#end
 

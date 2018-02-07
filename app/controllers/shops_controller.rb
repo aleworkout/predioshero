@@ -5,12 +5,11 @@ class ShopsController < ApplicationController
   # GET /shops.json
   def index
     @alejandros = Alejandro.all
-    if params[:predio_id] == nil
+    if params[:predio_id].blank?
       @shops = Shop.all
     else
       @shops = Shop.where(predio_id:params[:predio_id].titleize)
     end 
-    
     @my_shops = Shop.select(:predio_id).order(:predio_id).distinct
   end
   
