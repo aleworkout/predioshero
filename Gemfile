@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'devise'
-gem 'pg', '~> 0.18'
 gem 'bootstrap-select-rails'
 gem 'starter_generators'
 gem 'cancan', '~> 1.6', '>= 1.6.10'
@@ -31,7 +30,7 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'web-console', '~> 2.0'
+  gem 'sqlite3'
   #Capistrano
   gem 'capistrano', '3.6.1'
   gem 'capistrano-figaro-yml', '~> 1.0.2'
@@ -46,5 +45,6 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'pg'
 end
 
