@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
      ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
     '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
     |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
@@ -23,7 +21,6 @@ The Cloud9 IDE team
 
 Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
 To watch some training videos, visit http://www.youtube.com/user/c9ide
-=======
 # README #
 
 This README would normally document whatever steps are necessary to get your application up and running.
@@ -53,4 +50,5 @@ This README would normally document whatever steps are necessary to get your app
 
 * Repo owner or admin
 * Other community or team contact
->>>>>>> 0afe9544941d1ff1fe835c635a0c96c02afc3c57
+
+# predioshero
