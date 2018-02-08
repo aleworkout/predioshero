@@ -31,6 +31,7 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'web-console', '~> 2.0'
   #Capistrano
   gem 'capistrano', '3.6.1'
   gem 'capistrano-figaro-yml', '~> 1.0.2'
@@ -43,7 +44,7 @@ group :development do
   gem 'capistrano-rails-console'
 end
 
-#group :production do
-#  gem 'rails_12factor'
-#end
+group :production do
+  gem 'rails_12factor'
+end
 
